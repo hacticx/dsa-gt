@@ -1,0 +1,29 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	cin.ignore();
+	while(t--){
+		string s;
+		getline(cin, s);
+		for(int i=0;i<s.length();i++){
+			if (s[i]!=' ') {
+				s[i]=toupper(s[i]);
+				cout<<s[i];
+				for(int j=i+1;j<s.length();j++){
+					if(s[j]!=' ') {
+						s[j]=tolower(s[j]);
+						cout<<s[j];
+						i++;
+					}
+					else break;
+				}
+				cout<<" ";
+			}
+		}
+		cout<<endl;
+		
+	}
+}

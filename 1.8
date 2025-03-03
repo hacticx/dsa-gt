@@ -1,0 +1,29 @@
+#include<iostream>
+#include<sstream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    cin.ignore();
+
+    while(n--){
+        string s, tu, ho, t, kq="";
+        getline(cin,s);
+        stringstream ss(s);
+
+        while(ss>>tu){
+            tu[0]=toupper(tu[0]);
+            for(int i=1;i<tu.length();i++) tu[i]=tolower(tu[i]);
+            if(kq=="") ho=tu; 
+            else t+=tu+" ";
+            kq+=tu+" ";
+        }
+
+        ho[0]=toupper(ho[0]);
+        for(int i=1;i<ho.length();i++) ho[i]=toupper(ho[i]);
+
+        t.pop_back();
+        cout<<t<<", "<<ho<<endl;
+    }
+}

@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    string s;
+    cin>>s;
+    int a[26][2], x[26]={0}, c=0;
+    for(int i=0;i<52;i++){
+        int c=s[i]-'A';
+        a[c][x[c]++]=i;
+    }
+    for(int i=0;i<26;i++){
+        for(int j=i+1;j<26;j++){
+            if((a[i][0]<a[j][0]&&a[j][0]<a[i][1]&&a[i][1]<a[j][1])||
+               (a[j][0]<a[i][0]&&a[i][0]<a[j][1]&&a[j][1]<a[i][1]))
+                c++;
+        }
+    }
+
+    cout<<c<<endl;
+}
+	
